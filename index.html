@@ -2,42 +2,64 @@
 <html>
     <head>
         <title>Pronoun Badge Generator</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-
         <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" height=400>
-            <defs>
-            <clipPath id="full">
-            <circle cx="200" cy="200" r="200"/>
-            </clipPath>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" height=400>
+                <defs>
+                <clipPath id="full">
+                <circle cx="200" cy="200" r="200"/>
+                </clipPath>
 
-            <clipPath id="cut-off">
-            <rect x="0" y="0" width="100%" height="50%" transform="rotate(70, 200, 200)"/>
-            </clipPath>
+                <clipPath id="cut-off">
+                <rect x="0" y="0" width="100%" height="50%" transform="rotate(70, 200, 200)"/>
+                </clipPath>
 
-            <clipPath id="upperhalf">
-            <circle cx="200" cy="200" r="50%" clip-path="url(#cut-off)"/>
-            </clipPath>
-            </defs>
-            <g id="trans" clip-path="url(#full)">
+                <clipPath id="half">
+                <circle cx="200" cy="200" r="50%" clip-path="url(#cut-off)"/>
+                </clipPath>
+                </defs>
+                <g id="trans" class="flag flag1">
                 <path fill="#5BCEFA" d="M0 0h400v400H0z"/>
                 <path fill="#F5A9B8" d="M0 80h400v240H0z"/>
                 <path fill="#FFF" d="M0 160h400v80H0z"/>
-            </g>
-            <g id="agender" clip-path="url(#upperhalf)">
-              <path d="M0 0h800v560H0z"/>
-              <path fill="#b9b9b9" d="M0 80h800v400H0z"/>
-              <path fill="#fff" d="M0 160h800v240H0z"/>
-              <path fill="#b8f483" d="M0 240h800v80H0z"/>
-            </g>
+                </g>
+                <g id="agender" class="flag">
+                <path d="M0 0h400v560H0z"/>
+                <path fill="#b9b9b9" d="M0 80h400v400H0z"/>
+                <path fill="#fff" d="M0 160h400v240H0z"/>
+                <path fill="#b8f483" d="M0 240h400v80H0z"/>
+                </g>
+                <g id="nonbinary" class="flag flag2">
+                <path fill="#2D2D2D" d="m0,0h400v400H0"/>
+                <path fill="#9B59D0" d="m0,0h400v300H0"/>
+                <path fill="#FFFFFF" d="m0,0h400v200H0"/>
+                <path fill="#FFF433" d="m0,0h400v100H0"/>
+                </g>
 
-            <g id="pronouns">
-            <text x="50%" y="50%" font-size="64px" text-anchor="middle" dominant-baseline = "middle" >
+                <g id="pronouns">
+                <text x="50%" y="50%">
                 she/they
-            </text>
-            </g>
-        </svg>
+                </text>
+                </g>
+            </svg>
+        </div>
+        <div id="controls">
+            <!--
+                TODO:
+                    - choose flag1 and optionally flag 2 (if second flag is chosen, add a split)
+                    - if split is displayed, show a control for adjusting angle
+                    - Pronouns text
+                    - pronouns font
+                    - pronouns size
+                    - pronouns style (bold/italic/etc)
+                    - pronouns location? or just center?
+                    - pronouns color
+                    - export as PDF - need to specify target size
+                    - export as png
+            -->
+
         </div>
     </body>
 </html>
