@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="js/pronounbadgen.js"></script>
     </head>
-    <body>
+    <body onload="init()">
         <div id="badge">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" height=400>
                 <defs>
@@ -28,7 +28,7 @@
                 </g>
 
                 <g id="agender">
-                <path d="M0 0h800v560H0z"/>
+                <path d="M0 0h400v400H0z"/>
                 <path fill="#b9b9b9" d="M0 57h400v285H0z"/>
                 <path fill="#fff" d="M0 114h400v171H0z"/>
                 <path fill="#b8f483" d="M0 171h400v57H0z"/>
@@ -47,12 +47,9 @@
                 <use xlink:href="" id="flag1"/>
                 <use xlink:href="" id="flag2"/>
 
-                <g id="pronouns">
-                <text x="50%" y="50%">
-                she/they
-                </text>
-                </g>
+                <text x="50%" y="50%" id="pronouns" />
             </svg>
+            <button id="switch" onclick="switch_flags()" >Switch Flags</button>
         </div>
         <div id="controls">
             <div class="dropdown">
@@ -71,6 +68,9 @@
                     <a href="#" onclick='set_flag2("#agender")'><svg viewBox="0 0 400 400"><use xlink:href="#agender"/><use xlink:href="#squareframe"/></svg></a>
                 </div>
             </div>
+
+            <input type="text" id="pronouninput" value="she/they"/>
+
             <!--
                 TODO:
                     - choose flag1 and optionally flag 2 (if second flag is chosen, add a split)
